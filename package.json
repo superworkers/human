@@ -1,9 +1,12 @@
 {
-  "name": "nothing-static",
+  "name": "human",
   "version": "1.0.0",
   "scripts": {
     "build": "node build",
     "dev": "node dev",
     "watch": "node build --watch"
+  },
+  "devDependencies": {
+    "marked": "^17.0.0"
   }
 }

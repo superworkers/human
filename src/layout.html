@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,7 +15,10 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=DM+Serif+Text:wght@400&display=swap"
+    />
     <link rel="stylesheet" href="minterface.css" />
     <link rel="stylesheet" href="global.css" />
     {styles}
@@ -26,12 +29,38 @@
   </head>
   <body>
     <header class="layer">
-      <div class="layer-inset"></div>
+      <div class="layer-inset">
+        <a href="/" class="logo">
+          <div class="logo-mark">
+            <i class="fa-regular fa-diamond"></i>
+            <i class="fa-solid fa-diamond"></i>
+          </div>
+          <div class="logo-type">Human <span class="ai">AI</span></div>
+        </a>
+        <nav>
+          <a href="/research" {research-active}>Research</a>
+          <a href="/product" {product-active}>Product</a>
+          <!-- <a href="/developers" {developers-active}>For Developers</a> -->
+          <!-- <a href="/investors" {investors-active}>For Investors</a> -->
+          <a href="/company" {company-active}>Company</a>
+        </nav>
+        <nav>
+          <a href="https://mask.circle.so">Log in</a>
+          <a
+            class="button button-primary"
+            href="https://outlook.office.com/book/investorinterestcall@llmmask.com"
+            target="_blank"
+            >Book a demo</a
+          >
+        </nav>
+      </div>
     </header>
     {content}
     <footer class="layer">
       <div class="layer-inset">
-        <p>&copy; 2025</p>
+        <svg id="footer-logo" viewBox="0 0 456 100" preserveAspectRatio="xMidYMid meet">
+          <text x="228" y="96" text-anchor="middle">Human</text>
+        </svg>
       </div>
     </footer>
   </body>

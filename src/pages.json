@@ -1,8 +1,32 @@
 {
+  "company": {
+    "og-url": "https://9606.ai/company",
+    "title": "Company - Human AI"
+  },
+  "developers": {
+    "description": "Resources and documentation for developers building with Human AI.",
+    "og-url": "https://9606.ai/developers",
+    "title": "For Developers - Human AI"
+  },
   "index": {
-    "description": "Description of this site",
+    "description": "Human AI - Advanced artificial intelligence designed for human connection",
     "og-image": "/favicon.svg",
-    "og-url": "https://mattborn.com",
-    "title": "Nothing"
+    "og-url": "https://9606.ai",
+    "title": "Human AI"
+  },
+  "investors": {
+    "description": "Investment opportunities and company information for investors.",
+    "og-url": "https://9606.ai/investors",
+    "title": "For Investors - Human AI"
+  },
+  "product": {
+    "description": "Human AI products designed for enterprise AI deployment.",
+    "og-url": "https://9606.ai/product",
+    "title": "Product - Human AI"
+  },
+  "research": {
+    "description": "Pioneering research on the path to AGI. Our mission is to ensure that AGI benefits all of humanity.",
+    "og-url": "https://9606.ai/research",
+    "title": "Research - Human AI"
   }
 }

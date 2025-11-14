@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const { execSync } = require('child_process')
+const { marked } = require('marked')
 
 const getRepoName = () => {
   try {
@@ -24,29 +25,25 @@ const build = () => {
   const pages = JSON.parse(fs.readFileSync(path.join(srcDir, 'pages.json'), 'utf8'))
 
   const buildPage = (content, pageName, outputPath) => {
-    const indexDefaults = pages['index'] || {}
-    const pageConfig = pages[pageName] || {}
     const styles = fs.existsSync(path.join(srcDir, `${pageName}.css`))
       ? `<link rel="stylesheet" href="${pageName}.css" />`
       : ''
     const scripts = fs.existsSync(path.join(srcDir, `${pageName}.js`))
       ? `<script defer src="${pageName}.js"></script>`
       : ''
-
     const replacements = {
+      ...Object.fromEntries(Object.keys(pages).map(p => [`${p}-active`, p === pageName ? 'aria-current="page"' : ''])),
       base: basePath,
       content,
+      ...pages['index'],
+      ...pages[pageName],
       scripts,
       styles,
-      ...indexDefaults,
-      ...pageConfig,
     }
-
-    let html = layout
-    Object.keys(replacements).forEach(key => {
-      html = html.replace(new RegExp(`{${key}}`, 'g'), replacements[key])
-    })
-
+    const html = Object.keys(replacements).reduce(
+      (acc, key) => acc.replace(new RegExp(`{${key}}`, 'g'), replacements[key]),
+      layout,
+    )
     fs.writeFileSync(outputPath, html)
   }
 
@@ -62,9 +59,22 @@ const build = () => {
         fs.mkdirSync(newOutputDir, { recursive: true })
         processDir(srcPath, newOutputDir)
       } else if (entry.name === 'page.html') {
-        const content = fs.readFileSync(srcPath, 'utf8')
+        let content = fs.readFileSync(srcPath, 'utf8')
         const dirPath = path.relative(srcDir, dir)
         const pageName = dirPath || 'index'
+        const postsJsonPath = path.join(dir, 'posts.json')
+        if (fs.existsSync(postsJsonPath)) {
+          const posts = JSON.parse(fs.readFileSync(postsJsonPath, 'utf8'))
+          const postsHtml = Object.keys(posts)
+            .sort()
+            .reverse()
+            .map(
+              d =>
+                `<a class="post" href="/${pageName}/${d}/"><h3>${posts[d].title}</h3><p>${posts[d].description}</p><time>${d}</time></a>`,
+            )
+            .join('\n')
+          content = content.replace('{posts}', postsHtml)
+        }
         buildPage(content, pageName, path.join(outputDir, 'index.html'))
         console.log(`✅ ${relPath} → ${path.relative(buildDir, outputDir)}/index.html`)
       } else if (entry.name.endsWith('.html')) {
@@ -82,6 +92,26 @@ const build = () => {
   }
 
   processDir(srcDir, buildDir)
+
+  const buildPosts = dir => {
+    const postsJsonPath = path.join(dir, 'posts.json')
+    if (!fs.existsSync(postsJsonPath)) return
+    const posts = JSON.parse(fs.readFileSync(postsJsonPath, 'utf8'))
+    const pageName = path.relative(srcDir, dir)
+    Object.keys(posts).forEach(date => {
+      const mdPath = path.join(dir, `${date}.md`)
+      if (!fs.existsSync(mdPath)) return
+      const postDir = path.join(buildDir, pageName, date)
+      fs.mkdirSync(postDir, { recursive: true })
+      const content = `<article class="layer"><div class="layer-inset">${marked(fs.readFileSync(mdPath, 'utf8'))}</div></article>`
+      buildPage(content, pageName, path.join(postDir, 'index.html'))
+      console.log(`📝 ${pageName}/${date}.md → ${pageName}/${date}/index.html`)
+    })
+  }
+
+  fs.readdirSync(srcDir, { withFileTypes: true })
+    .filter(e => e.isDirectory())
+    .forEach(e => buildPosts(path.join(srcDir, e.name)))
 
   console.log('\n✨ Formatting all files')
   execSync('npx prettier --write .', { stdio: 'inherit' })
