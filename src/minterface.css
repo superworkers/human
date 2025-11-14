@@ -6,6 +6,7 @@
   --color-light: rgba(0, 0, 17, 0.1); /* #0000111a - 10% */
   --color-lighter: rgba(0, 0, 17, 0.05); /* #0000110d - 5% */
   --color-lightest: rgb(255, 255, 255); /* #fff */
+  --space-clamp: clamp(1.5rem, 3vw, 4rem);
 }
 .ghost {
   --color-darkest: rgba(255, 255, 255, 0.9); /* e5 - 90% */

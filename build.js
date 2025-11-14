@@ -33,13 +33,19 @@ const build = () => {
       ? `<script defer src="${pageName}.js"></script>`
       : ''
 
+    const activePage = {}
+    Object.keys(pages).forEach(page => {
+      activePage[`${page}-active`] = page === pageName ? 'aria-current="page"' : ''
+    })
+
     const replacements = {
+      ...activePage,
       base: basePath,
       content,
-      scripts,
-      styles,
       ...indexDefaults,
       ...pageConfig,
+      scripts,
+      styles,
     }
 
     let html = layout
