@@ -28,7 +28,7 @@
     {scripts}
   </head>
   <body>
-    <header class="layer">
+    <header id="site-header" class="layer">
       <div class="layer-inset">
         <a href="/" class="logo">
           <div class="logo-mark">
@@ -38,70 +38,47 @@
           <div class="logo-type">Human <span class="ai">AI</span></div>
         </a>
         <nav>
-          <a href="/research" {research-active}>Research</a>
           <a href="/product" {product-active}>Product</a>
-          <!-- <a href="/developers" {developers-active}>For Developers</a> -->
-          <!-- <a href="/investors" {investors-active}>For Investors</a> -->
-          <a href="/company" {company-active}>Company</a>
+          <a href="/research" {research-active}>Research</a>
+          <a href="/use-cases" {use-cases-active}>Use Cases</a>
+          <a href="/team" {team-active}>Team</a>
         </nav>
         <nav>
-          <a href="https://mask.circle.so">Log in</a>
+          <a href="/investors" {investors-active}>Investor Login</a>
           <a
             class="button button-primary"
             href="https://outlook.office.com/book/investorinterestcall@llmmask.com"
             target="_blank"
-            >Book a demo</a
+            >Book an intro</a
           >
         </nav>
       </div>
     </header>
-    {content}
-    <footer id="footer">
-      <div class="footer-container">
-        <div class="footer-grid">
+    <main id="site-main">{content}</main>
+    <footer id="site-footer" class="layer">
+      <div class="layer-inset footer-grid">
+        <div class="footer-brand">
+          <div class="logo-type">Human <span class="ai">AI</span></div>
+          <p>Deterministic orchestration for regulated AI systems.</p>
+          <a class="button button-outline" href="/investors">Investor Login</a>
+        </div>
+        <div class="footer-links">
           <div class="footer-column">
-            <h4>Product</h4>
-            <ul>
-              <li><a href="#">Platform</a></li>
-              <li><a href="#">Superworkers</a></li>
-              <li><a href="#">Compliance</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Solutions</h4>
-            <ul>
-              <li><a href="#">For RIAs</a></li>
-              <li><a href="#">For Wealth Advisors</a></li>
-              <li><a href="#">Enterprise</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="#">Case Studies</a></li>
-              <li><a href="#">Documentation</a></li>
-              <li><a href="#">Support</a></li>
-            </ul>
+            <h4>Platform</h4>
+            <a href="/product">Product</a>
+            <a href="/research">Research</a>
+            <a href="/use-cases">Use Cases</a>
           </div>
           <div class="footer-column">
             <h4>Company</h4>
-            <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
+            <a href="/team">Team</a>
+            <a href="https://outlook.office.com/book/investorinterestcall@llmmask.com" target="_blank">Book an intro</a>
           </div>
         </div>
-        <div class="footer-bottom">
-          <div class="footer-logo">Human AI</div>
+        <div class="footer-meta">
+          <p>Built for investor education and enterprise clarity.</p>
           <p>&copy; Human AI. All rights reserved.</p>
         </div>
-      </div>
-    </footer>
-    <footer class="layer">
-      <div class="layer-inset">
-        <svg id="footer-logo" viewBox="0 0 456 100" preserveAspectRatio="xMidYMid meet">
-          <text x="228" y="96" text-anchor="middle">Human</text>
-        </svg>
       </div>
     </footer>
   </body>

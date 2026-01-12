@@ -1,14 +1,151 @@
-<section id="research-hero" class="layer">
-  <div class="layer-inset">
-    <div class="badge">Research</div>
-    <h1>Pioneering research on the path to AGI</h1>
-    <p>
-      We believe our research will eventually lead to artificial general intelligence, a system that can solve
-      human-level problems. Our mission is to ensure that AGI benefits all of humanity.
+<section id="research-hero" class="layer page-hero">
+  <div class="layer-inset stack">
+    <p class="eyebrow">Research</p>
+    <h1 id="research-title">Governance-first research for enterprise AI.</h1>
+    <p class="lede">
+      Our work focuses on deterministic orchestration, human authority, and why auditability and data ownership must be
+      architectural.
     </p>
-    <div class="placeholder"></div>
   </div>
 </section>
-<section class="layer">
-  <div class="layer-inset">{posts}</div>
+<section id="research-paradigms" class="layer">
+  <div class="layer-inset stack">
+    <div class="section-head">
+      <h2>The three paradigms of AI systems.</h2>
+      <p class="lede">Probabilistic tools are insufficient when consequences are regulated and irreversible.</p>
+    </div>
+    <div class="feature-grid grid-3">
+      <div class="feature-card">
+        <h3>Probabilistic assistants</h3>
+        <p>Helpful, but unverifiable. Output variance creates compliance and audit exposure.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Agentic workflows</h3>
+        <p>Autonomy without governance scales risk faster than value.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Deterministic orchestration</h3>
+        <p>Explicit state, policy enforcement, and human approval at every step.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="research-failures" class="layer ghost">
+  <div class="layer-inset stack">
+    <div class="section-head">
+      <h2>Why current approaches fail.</h2>
+      <p class="lede">Protocols solve connectivity. They do not solve governance.</p>
+    </div>
+    <div class="split-grid">
+      <div class="card">
+        <h3>Audit gaps</h3>
+        <p>Without deterministic workflow, you cannot prove why a decision happened.</p>
+      </div>
+      <div class="card">
+        <h3>Policy drift</h3>
+        <p>Compliance rules change faster than model prompts can keep up.</p>
+      </div>
+      <div class="card">
+        <h3>Human authority loss</h3>
+        <p>Agentic systems skip approvals by design, not by exception.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="research-mcp" class="layer">
+  <div class="layer-inset stack">
+    <div class="section-head">
+      <h2>The orchestration layer: why MCP needs governance.</h2>
+      <p class="lede">MCP, AgentKit, and ADK standardize connectivity. They do not answer who controls it.</p>
+    </div>
+    <div class="split-grid">
+      <div class="card">
+        <h3>The protocol explosion</h3>
+        <ul id="protocol-list" class="plain-list">
+          <li><strong>Anthropic MCP</strong> connects models to tools and data.</li>
+          <li><strong>OpenAI AgentKit</strong> defines deterministic agent patterns.</li>
+          <li><strong>Google ADK</strong> offers agent tooling on Google Cloud.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The governance gap</h3>
+        <ul id="governance-list" class="plain-list">
+          <li>Is this user allowed to make this specific request?</li>
+          <li>Does this operation comply with policy and regulation?</li>
+          <li>What audit trail documents this decision?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="research-orchestrator" class="layer ghost">
+  <div class="layer-inset stack">
+    <div class="section-head">
+      <h2>Human AI as MCP orchestrator.</h2>
+      <p class="lede">We sit above protocols and enforce governance before, during, and after execution.</p>
+    </div>
+    <div class="split-grid">
+      <div class="card">
+        <h3>Before</h3>
+        <p>Policy checks, authorization, and workflow eligibility.</p>
+      </div>
+      <div class="card">
+        <h3>During</h3>
+        <p>Model routing, validation contracts, and deterministic task control.</p>
+      </div>
+      <div class="card">
+        <h3>After</h3>
+        <p>Audit records, state transitions, and human approvals.</p>
+      </div>
+    </div>
+    <pre id="orchestrator-diagram" class="diagram">
++----------------------------------------------+
+|              Human AI Orchestration          |
+|  +----------------------------------------+  |
+|  | Deterministic Control Plane            |  |
+|  | (FSM/Petri Nets, Policy Enforcement)   |  |
+|  +----------------------------------------+  |
+|                    |                         |
+|  +----------------------------------------+  |
+|  | Protocol Adapters                     |  |
+|  | MCP | A2A | ACP | REST/gRPC            |  |
+|  +----------------------------------------+  |
+|                    |                         |
+|  +----------------------------------------+  |
+|  | AI Models (Claude, GPT, Gemini, etc.)  |  |
+|  +----------------------------------------+  |
++----------------------------------------------+
+    </pre>
+  </div>
+</section>
+<section id="research-nebari" class="layer">
+  <div class="layer-inset stack">
+    <div class="section-head">
+      <h2>Nebari and the Open Teams ecosystem.</h2>
+      <p class="lede">A natural extension of the Open Teams partnership and the scientific Python stack.</p>
+    </div>
+    <div class="split-grid">
+      <div class="card">
+        <h3>Nebari foundation</h3>
+        <p>Kubernetes-native infrastructure for JupyterHub, Dask, and ML workflows across clouds or on-prem.</p>
+      </div>
+      <div class="card">
+        <h3>Human AI addition</h3>
+        <p>Govern ML workflows with deterministic policy, audit trails, and multi-model routing.</p>
+      </div>
+      <div class="card">
+        <h3>Strategic alignment</h3>
+        <p>The combined stack delivers enterprise AI operations with neutral governance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="research-reading" class="layer">
+  <div class="layer-inset stack">
+    <div class="section-head">
+      <h2>Further reading.</h2>
+      <p class="lede">White paper, protocol documentation, and academic citations available in the data room.</p>
+    </div>
+    <div class="post-list">{posts}</div>
+  </div>
 </section>

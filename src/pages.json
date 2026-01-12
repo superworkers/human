@@ -1,32 +1,33 @@
 {
-  "company": {
-    "og-url": "https://9606.ai/company",
-    "title": "Company - Human AI"
-  },
-  "developers": {
-    "description": "Resources and documentation for developers building with Human AI.",
-    "og-url": "https://9606.ai/developers",
-    "title": "For Developers - Human AI"
-  },
   "index": {
-    "description": "Human AI - Advanced artificial intelligence designed for human connection",
+    "description": "Human AI provides deterministic orchestration for regulated AI systems and investor-grade governance.",
     "og-image": "/favicon.svg",
     "og-url": "https://9606.ai",
     "title": "Human AI"
   },
   "investors": {
-    "description": "Investment opportunities and company information for investors.",
+    "description": "Secure investor login and data room access for Human AI.",
     "og-url": "https://9606.ai/investors",
-    "title": "For Investors - Human AI"
+    "title": "Investor Login - Human AI"
   },
   "product": {
-    "description": "Human AI products designed for enterprise AI deployment.",
+    "description": "Deterministic orchestration and governance for enterprise AI systems.",
     "og-url": "https://9606.ai/product",
     "title": "Product - Human AI"
   },
   "research": {
-    "description": "Pioneering research on the path to AGI. Our mission is to ensure that AGI benefits all of humanity.",
+    "description": "Research on deterministic orchestration, MCP governance, and enterprise AI control.",
     "og-url": "https://9606.ai/research",
     "title": "Research - Human AI"
+  },
+  "team": {
+    "description": "Operators and infrastructure builders delivering deterministic AI governance.",
+    "og-url": "https://9606.ai/team",
+    "title": "Team - Human AI"
+  },
+  "use-cases": {
+    "description": "Real-world deployments of deterministic orchestration in regulated industries.",
+    "og-url": "https://9606.ai/use-cases",
+    "title": "Use Cases - Human AI"
   }
 }
